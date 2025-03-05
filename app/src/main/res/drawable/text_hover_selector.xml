@@ -1,0 +1,8 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed Durumu (Tıklanmış) -->
+    <item android:state_pressed="true" android:color="@color/navy_blue" />
+    <!-- Focus Durumu (Odaklanmış) -->
+    <item android:state_focused="true" android:color="@color/navy_blue" />
+    <!-- Normal Durum -->
+    <item android:color="@color/black" />
+</selector>

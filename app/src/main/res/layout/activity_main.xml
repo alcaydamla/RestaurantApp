@@ -1,0 +1,185 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Full Screen Transparent Background -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image"
+        android:alpha="0.65"
+        android:contentDescription="Background Image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Top Bar (White Bar) -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="28dp"
+            android:layout_height="40dp"
+            android:contentDescription="Menu Icon"
+            android:src="@drawable/ic_menu" />
+
+        <TextView
+            android:id="@+id/pagesText"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="PAGES"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="49dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="0dp">
+
+            <!-- Cart Icon -->
+            <ImageView
+                android:id="@+id/TrolleyIcon"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="100dp"
+                android:contentDescription="Cart Icon"
+                android:src="@drawable/trolley" />
+
+            <TextView
+                android:id="@+id/cartBadge"
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/red_circle"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Restaurant Header and Information -->
+    <LinearLayout
+        android:id="@+id/heroSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="91dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:contentDescription="Restaurant Logo"
+            android:src="@drawable/restaurant_icon" />
+
+        <TextView
+            android:id="@+id/restaurantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Gusto Italiano"
+            android:textColor="@color/navy_blue"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Transparent White Box -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/transparentWhiteBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@android:color/white"
+        android:alpha="0.85"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/heroSection"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- CookBooks Title and Icons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/cookBooksTitle"
+                    android:layout_width="286dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:text="CookBooks"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Search Bar -->
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="8dp"
+                android:hint="Search Products"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="14sp" />
+
+            <!-- Product List (RecyclerView) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productList"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:clipToPadding="false"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/searchBar"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:contentDescription="Add Button"
+        android:src="@drawable/ic_plus"
+        android:backgroundTint="@color/navy_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/transparentWhiteBox" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

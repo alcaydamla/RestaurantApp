@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- Ürün Görseli -->
+    <ImageView
+        android:id="@+id/OrderImage"
+        android:layout_width="116dp"
+        android:layout_height="116dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Product Image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/id" />
+
+    <!-- Ürün Bilgileri -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/OrderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/orderPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$10.00"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/orderCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Count: 1"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
